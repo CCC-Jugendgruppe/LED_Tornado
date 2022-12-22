@@ -49,34 +49,34 @@ $(wildcard ../makefile.init) \
 $(wildcard ../makefile.targets) \
 
 
-BUILD_ARTIFACT_NAME := apa102ledstreifen
+BUILD_ARTIFACT_NAME := apa102_2
 BUILD_ARTIFACT_EXTENSION := elf
 BUILD_ARTIFACT_PREFIX :=
 BUILD_ARTIFACT := $(BUILD_ARTIFACT_PREFIX)$(BUILD_ARTIFACT_NAME)$(if $(BUILD_ARTIFACT_EXTENSION),.$(BUILD_ARTIFACT_EXTENSION),)
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXECUTABLES += \
-apa102ledstreifen.elf \
+apa102_2.elf \
 
 MAP_FILES += \
-apa102ledstreifen.map \
+apa102_2.map \
 
 SIZE_OUTPUT += \
 default.size.stdout \
 
 OBJDUMP_LIST += \
-apa102ledstreifen.list \
+apa102_2.list \
 
 
 # All Target
 all: main-build
 
 # Main-build Target
-main-build: apa102ledstreifen.elf secondary-outputs
+main-build: apa102_2.elf secondary-outputs
 
 # Tool invocations
-apa102ledstreifen.elf apa102ledstreifen.map: $(OBJS) $(USER_OBJS) /home/tz/STM32CubeIDE/workspace_1.10.1/apa102ledstreifen/STM32F446RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-g++ -o "apa102ledstreifen.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/home/tz/STM32CubeIDE/workspace_1.10.1/apa102ledstreifen/STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="apa102ledstreifen.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+apa102_2.elf apa102_2.map: $(OBJS) $(USER_OBJS) /home/tz/STM32CubeIDE/workspace_1.10.1/apa102_2/STM32F446RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-g++ -o "apa102_2.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/home/tz/STM32CubeIDE/workspace_1.10.1/apa102_2/STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="apa102_2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -85,14 +85,14 @@ default.size.stdout: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
 	@echo 'Finished building: $@'
 	@echo ' '
 
-apa102ledstreifen.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "apa102ledstreifen.list"
+apa102_2.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "apa102_2.list"
 	@echo 'Finished building: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) apa102ledstreifen.elf apa102ledstreifen.list apa102ledstreifen.map default.size.stdout
+	-$(RM) apa102_2.elf apa102_2.list apa102_2.map default.size.stdout
 	-@echo ' '
 
 secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST)

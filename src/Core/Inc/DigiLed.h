@@ -12,7 +12,7 @@
 
 
 /* defines */
-#define 	LED_FRAME_SIZE   		16		///< \define number of LEDs in the chain
+#define 	LED_FRAME_SIZE   		7		///< \define number of LEDs in the chain
 
 #define 	FALSE 					0		// false value
 #define 	TRUE 					1		// true value
