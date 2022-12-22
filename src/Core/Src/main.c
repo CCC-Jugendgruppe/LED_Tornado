@@ -99,9 +99,11 @@ int main(void)
   {
 	DigiLed_setRGB(0, 0xD60270);
 	DigiLed_setRGB(1, 0xD60270);
-	DigiLed_setRGB(2, 0x9B4F96);
-	DigiLed_setRGB(3, 0x0038A8);
+	DigiLed_setRGB(2, 0xD60270);
+	DigiLed_setRGB(3, 0x9B4F96);
 	DigiLed_setRGB(4, 0x0038A8);
+	DigiLed_setRGB(5, 0x0038A8);
+	DigiLed_setRGB(6, 0x0038A8);
 	//DigiLed_setRGB(4, 0x5BCEFA);
 
 
