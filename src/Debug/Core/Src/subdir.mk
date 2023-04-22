@@ -9,27 +9,39 @@ C_SRCS += \
 ../Core/Src/main.c \
 ../Core/Src/stm32f4xx_hal_msp.c \
 ../Core/Src/stm32f4xx_it.c \
+../Core/Src/stm32f4xx_nucleo.c \
+../Core/Src/stspin240_250.c \
 ../Core/Src/syscalls.c \
 ../Core/Src/sysmem.c \
-../Core/Src/system_stm32f4xx.c 
+../Core/Src/system_stm32f4xx.c \
+../Core/Src/x_nucleo_ihm12a1_stm32f4xx.c \
+../Core/Src/x_nucleo_ihmxx.c 
 
 C_DEPS += \
 ./Core/Src/DigiLed.d \
 ./Core/Src/main.d \
 ./Core/Src/stm32f4xx_hal_msp.d \
 ./Core/Src/stm32f4xx_it.d \
+./Core/Src/stm32f4xx_nucleo.d \
+./Core/Src/stspin240_250.d \
 ./Core/Src/syscalls.d \
 ./Core/Src/sysmem.d \
-./Core/Src/system_stm32f4xx.d 
+./Core/Src/system_stm32f4xx.d \
+./Core/Src/x_nucleo_ihm12a1_stm32f4xx.d \
+./Core/Src/x_nucleo_ihmxx.d 
 
 OBJS += \
 ./Core/Src/DigiLed.o \
 ./Core/Src/main.o \
 ./Core/Src/stm32f4xx_hal_msp.o \
 ./Core/Src/stm32f4xx_it.o \
+./Core/Src/stm32f4xx_nucleo.o \
+./Core/Src/stspin240_250.o \
 ./Core/Src/syscalls.o \
 ./Core/Src/sysmem.o \
-./Core/Src/system_stm32f4xx.o 
+./Core/Src/system_stm32f4xx.o \
+./Core/Src/x_nucleo_ihm12a1_stm32f4xx.o \
+./Core/Src/x_nucleo_ihmxx.o 
 
 
 # Each subdirectory must supply rules for building sources it contributes
@@ -39,7 +51,7 @@ Core/Src/%.o Core/Src/%.su: ../Core/Src/%.c Core/Src/subdir.mk
 clean: clean-Core-2f-Src
 
 clean-Core-2f-Src:
-	-$(RM) ./Core/Src/DigiLed.d ./Core/Src/DigiLed.o ./Core/Src/DigiLed.su ./Core/Src/main.d ./Core/Src/main.o ./Core/Src/main.su ./Core/Src/stm32f4xx_hal_msp.d ./Core/Src/stm32f4xx_hal_msp.o ./Core/Src/stm32f4xx_hal_msp.su ./Core/Src/stm32f4xx_it.d ./Core/Src/stm32f4xx_it.o ./Core/Src/stm32f4xx_it.su ./Core/Src/syscalls.d ./Core/Src/syscalls.o ./Core/Src/syscalls.su ./Core/Src/sysmem.d ./Core/Src/sysmem.o ./Core/Src/sysmem.su ./Core/Src/system_stm32f4xx.d ./Core/Src/system_stm32f4xx.o ./Core/Src/system_stm32f4xx.su
+	-$(RM) ./Core/Src/DigiLed.d ./Core/Src/DigiLed.o ./Core/Src/DigiLed.su ./Core/Src/main.d ./Core/Src/main.o ./Core/Src/main.su ./Core/Src/stm32f4xx_hal_msp.d ./Core/Src/stm32f4xx_hal_msp.o ./Core/Src/stm32f4xx_hal_msp.su ./Core/Src/stm32f4xx_it.d ./Core/Src/stm32f4xx_it.o ./Core/Src/stm32f4xx_it.su ./Core/Src/stm32f4xx_nucleo.d ./Core/Src/stm32f4xx_nucleo.o ./Core/Src/stm32f4xx_nucleo.su ./Core/Src/stspin240_250.d ./Core/Src/stspin240_250.o ./Core/Src/stspin240_250.su ./Core/Src/syscalls.d ./Core/Src/syscalls.o ./Core/Src/syscalls.su ./Core/Src/sysmem.d ./Core/Src/sysmem.o ./Core/Src/sysmem.su ./Core/Src/system_stm32f4xx.d ./Core/Src/system_stm32f4xx.o ./Core/Src/system_stm32f4xx.su ./Core/Src/x_nucleo_ihm12a1_stm32f4xx.d ./Core/Src/x_nucleo_ihm12a1_stm32f4xx.o ./Core/Src/x_nucleo_ihm12a1_stm32f4xx.su ./Core/Src/x_nucleo_ihmxx.d ./Core/Src/x_nucleo_ihmxx.o ./Core/Src/x_nucleo_ihmxx.su
 
 .PHONY: clean-Core-2f-Src
 
