@@ -31,6 +31,8 @@ extern "C" {
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include "x_nucleo_ihmxx.h"
+#include "stspin240_250.h"
 
 /* USER CODE END Includes */
 
@@ -46,7 +48,7 @@ extern "C" {
 
 /* Exported macro ------------------------------------------------------------*/
 /* USER CODE BEGIN EM */
-
+#define STSPIN_240
 /* USER CODE END EM */
 
 /* Exported functions prototypes ---------------------------------------------*/

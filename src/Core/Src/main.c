@@ -19,6 +19,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 
+
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
@@ -76,6 +77,12 @@ int main(void)
   HAL_Init();
 
   /* USER CODE BEGIN Init */
+  int DELAY_TIME = 500;
+  int BLACK = 0x000000;
+  int COLOR = 0x0000FF;
+  int color[] = { 0xff0000, 0x00ff00, 0x0000ff };
+
+
   /* USER CODE END Init */
 
   /* Configure the system clock */
@@ -91,23 +98,20 @@ int main(void)
   MX_SPI1_Init();
   /* USER CODE BEGIN 2 */
   DigiLed_init(&hspi1);
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	DigiLed_setRGB(0, 0xD60270);
-	DigiLed_setRGB(1, 0xD60270);
-	DigiLed_setRGB(2, 0xD60270);
-	DigiLed_setRGB(3, 0x9B4F96);
-	DigiLed_setRGB(4, 0x0038A8);
-	DigiLed_setRGB(5, 0x0038A8);
-	DigiLed_setRGB(6, 0x0038A8);
-	//DigiLed_setRGB(4, 0x5BCEFA);
+	  for (int var = 0; var < 22; ++var) {
+		  DigiLed_setRGB(var, color[var % 3]);
+		  DigiLed_update(1);
+		  HAL_Delay(500);
+	  }
+	  DigiLed_setAllRGB(0x0);
 
-
-	DigiLed_update(1);
     /* USER CODE END WHILE */
     /* USER CODE BEGIN 3 */
   }
